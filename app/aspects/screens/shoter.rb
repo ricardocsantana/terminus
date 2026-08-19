@@ -18,11 +18,14 @@ module Terminus
             ferrum_process_timeout: :process_timeout,
             ferrum_javascript_errors: :js_errors
           },
-          browser_options: {
+                    browser_options: {
             "disable-dev-shm-usage" => nil,
             "disable-gpu" => nil,
             "hide-scrollbar" => nil,
-            "no-sandbox" => nil
+            "no-sandbox" => nil,
+            "single-process" => nil,
+            "disable-software-rasterizer" => nil,
+            "js-flags" => "--max_old_space_size=64"
           }
         ]
         include Dry::Monads[:result]
