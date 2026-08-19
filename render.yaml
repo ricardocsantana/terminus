@@ -13,7 +13,6 @@ services:
     autoDeployTrigger: commit
     healthCheckPath: /up
     runtime: docker
-    dockerCommand: /bin/sh -c "bundle exec sidekiq -r ./config/sidekiq.rb & exec bundle exec puma --config ./config/puma.rb"
     envVars:
       - key: API_URI
         value: http://0.0.0.0:10000
