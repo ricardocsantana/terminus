@@ -16,10 +16,7 @@ services:
     dockerCommand: /bin/sh -c "bundle exec sidekiq -r ./config/sidekiq.rb & exec bundle exec puma --config ./config/puma.rb"
     envVars:
       - key: API_URI
-        fromService:
-          type: web
-          name: terminus-web
-          property: host
+        value: http://0.0.0.0:10000
       - key: APP_SETUP
         value: true
       - key: HANAMI_PORT
