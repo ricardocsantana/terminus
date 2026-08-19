@@ -13,4 +13,7 @@ else
   puts "Application is setup. Skipped."
 end
 
+# Start Sidekiq in the background to render screen images for free
+Process.spawn("bundle", "exec", "sidekiq", "-r", "./config/sidekiq.rb")
+
 exec(*ARGV)
